@@ -24,7 +24,7 @@ function setup() {
   frameRate(40);
 
   len = 100;
-  textAlign(LEFT, CENTER);
+  textAlign(CENTER, CENTER);
   textSize(20);
   rectMode(CENTER);
 
@@ -43,6 +43,12 @@ function draw() {
 
     // setup drawing
     background(0);
+
+    fill('white');
+    noStroke();
+    textSize(40);
+    text('Simple Harmonic Mottion', 0.5*width, height*0.06);
+
     noFill();
     stroke('white');
     strokeWeight(2);
@@ -59,7 +65,7 @@ function draw() {
 
 
     // translate to fixed point
-    translate(0.5*windowWidth, 0.07*windowHeight);
+    translate(0.5*windowWidth, 0.13*windowHeight);
 
     // calculate theta
     theta = thetaMax*cos(2*PI*time/timePeriod);
@@ -112,7 +118,7 @@ function draw() {
     time += t_multiply * 0.025;
 
     // reset to origin
-    translate(-0.5*windowWidth, -0.07*windowHeight);
+    translate(-0.5*windowWidth, -0.13*windowHeight);
 
     stroke('white');
     fill('white');
@@ -131,7 +137,7 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-var Slider = function(x, y, val, sym, max) {
+  var Slider = function(x, y, val, sym, max) {
     this.x = x;
     this.y = y;
     this.val = constrain(val, 0, max);
