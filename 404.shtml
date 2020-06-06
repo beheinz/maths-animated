@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+    @font-face {
+        font-family: "myFirstFont";
+        src: url("CharterITC-Regu.otf");
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      background: black;
+      padding: 100px;
+    }
+
+    body {
+      font-family: myFirstFont;
+      color:white;
+    }
+
+    h1 {
+      display: block;
+      font-size: 4em;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: bold;
+      text-align:center;
+    }
+
+    p {
+      text-align:center;
+      font-size: 2em;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+      display: block;
+      transition: 0.4s;
+    }
+
+    .sidebar a:hover {
+      color: red;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 20px;
+      margin-left: 50px;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      font-family: "myFirstFont";
+    }
+
+    .openbtn:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    }
+
+    canvas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -3 !important
+    }
+
+    </style>
+
+    </style>
+
+
+</head>
+
+<style> body{padding:0; margin:0;} </style>
+<body style="background-color:black;">
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
+    <a href="#">Home</a>
+    <a href="shm.html">-  Pendulum</a>
+    <a href="2d_matrix.html">-  2D Matrix Rotations</a>
+    <a href="#">Git</a>
+    <a href="https://www.linkedin.com/in/bdhynes/">LinkedIn</a>
+    <a href="#">About</a>
+  </div>
+
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">Menu</button>
+  </div>
+
+  <script>
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "300px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+  </script>
+
+  <div class="content">
+  <h1>Woops</h1>
+  <p>You seem to have got lost! Let me know if there is an issue.</p>
+  </div>
+
+
+</body>
+
+</html>
