@@ -8,6 +8,8 @@ let mouse_in_y = 0;
 let b_x = 100;
 let b_y = 30;
 let auto_rotate = 1;
+let waveY = [];
+let waveX = [];
 
 function preload() {
   fontReg = loadFont('CharterITC-Regu.otf');
@@ -85,14 +87,36 @@ function draw() {
 
   stroke(255, 0, 0);
 
+  // lines
+
+  waveX.unshift(squareRotatedX);
+  waveY.unshift(squareRotatedY);
+  print(squareRotatedX);
+
+  stroke(255, 0, 0);
+  noFill();
+  beginShape();
+  for (let i =0; i<waveX.length; i++){
+    vertex(waveX[i], waveY[i]);
+  }
+  endShape();
+
   translate(squareRotatedX, squareRotatedY);
   rotate(angle);
+  fill('black');
   square(0, 0, 0.02*width);
   rotate(-angle);
   translate(-squareRotatedX, -squareRotatedY);
 
   translate(-centerX, -centerY);
 
+  // remove off screen wave
+  if (waveX.length > 360){
+    waveX.pop();
+  }
+  if (waveY.length > 360){
+    waveY.pop();
+  }
 
   // button
   let b_center_x = width*0.2;
@@ -207,7 +231,7 @@ var Slider = function(x, y, val, sym, max) {
 
 
         text(this.val, this.x + this.len + 10, this.y-4);
-        fill('black');
+        fill(0,0,255);
         stroke('white');
         ellipse(this.cx, this.y, this.sz);
     };

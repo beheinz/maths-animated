@@ -47,7 +47,7 @@ function draw() {
     fill('white');
     noStroke();
     textSize(40);
-    text('Simple Harmonic Mottion', 0.5*width, height*0.06);
+    text('Simple Harmonic Motion', 0.5*width, height*0.06);
 
     noFill();
     stroke('white');
@@ -107,11 +107,11 @@ function draw() {
     stroke('white');
     line(0,0,x,y);
     noStroke();
-    fill('white');
-    ellipse(x,y,10);
+    fill(0,0,255);
+    ellipse(x,y,30);
 
     fill(255,0,0);
-    ellipse(wave[0],length+10,10);
+    //ellipse(wave[0],length+10,10);
 
     // increment time
     t_multiply = slide_tm.val;

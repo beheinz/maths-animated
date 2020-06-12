@@ -35,6 +35,8 @@ function draw() {
   stroke('white');
   noFill();
 
+  //button
+
   let b_center_x = width*0.44;
   let b_center_y = height*0.5+0.5*width*0.32*0.39863;
   let b_center_x_full = width*0.56;
@@ -111,13 +113,13 @@ function draw() {
 
   // draw square
   let angle = angleDegrees * PI / 180;
-  noFill();
+  fill(100+155*(y_distance+x_distance),0,0);
   strokeWeight(3);
-  stroke(255, 0, 0);
+  noStroke();
   translate(0.5*width, 0.5*height);
-  square(-0.3*width*cos(angle), -0.35*height*sin(angle), 50);
+  ellipse(-0.3*width*cos(angle), -0.35*height*sin(angle), 50);
   translate(-0.5*width, -0.5*height);
-
+  print((y_distance+x_distance));
   // increment time
   if (angleDegrees < 360){
     if (1/(y_distance+x_distance) < 15) {

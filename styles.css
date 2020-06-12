@@ -88,7 +88,7 @@ p {
   left: 0;
   background-color: white;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.3s;
   padding-top: 60px;
 }
 
@@ -107,8 +107,9 @@ p {
 
 .sidebar .closebtn {
   position: absolute;
+  font-family: "Arial";
   top: 0;
-  right: 25px;
+  right: 10px;
   font-size: 20px;
   margin-left: 50px;
 }
@@ -124,6 +125,24 @@ p {
 }
 
 .openbtn:hover {
+  background-color: white;
+  color: black;
+}
+
+.openbtnR {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  font-family: "myFirstFont";
+}
+
+.openbtnR:hover {
   background-color: white;
   color: black;
 }
@@ -151,6 +170,46 @@ p {
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 15px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: red;
+}
+
+.sidenav .closebtn {
+  font-family: "Arial";
+  position: absolute;
+  top: 0;
+  right: 365px;
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 canvas {

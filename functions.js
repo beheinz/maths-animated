@@ -6,6 +6,14 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
 
+function openNavR() {
+  document.getElementById("mySidenav").style.width = "400px";
+}
+
+function closeNavR() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
 function openFull() {
   var elem = document.documentElement;
   elem.mozRequestFullScreen();
