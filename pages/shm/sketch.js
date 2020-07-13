@@ -12,7 +12,7 @@ let t_multiply = 1;
 function preload() {
   img = loadImage('/../../assets/f1.png');
   img2 = loadImage('/../../assets/f2.png');
-  fontReg = loadFont('/../../assets/CharterITC-Regu.otf');
+  fontReg = loadFont('/../../assets/Poppins-Regular.ttf');
 }
 
 function setup() {

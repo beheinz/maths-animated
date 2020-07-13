@@ -12,7 +12,7 @@ let waveY = [];
 let waveX = [];
 
 function preload() {
-  fontReg = loadFont('/../../assets/CharterITC-Regu.otf');
+  fontReg = loadFont('/../../assets/Poppins-Regular.ttf');
   img = loadImage('/../../assets/matrix.png');
 }
 

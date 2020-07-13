@@ -6,7 +6,7 @@ let barWidth;
 
 function preload() {
 
-  fontReg = loadFont('/../../assets/CharterITC-Regu.otf');
+  fontReg = loadFont('/../../assets/Poppins-Regular.ttf');
   area = loadImage('/../../assets/area.png');
   area_tri = loadImage('/../../assets/area_tri.png');
   base = loadImage('/../../assets/base.png');
