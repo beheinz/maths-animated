@@ -1,16 +1,9 @@
 let time_in_b = 0;
 let time = 0;
 let angleDegrees = 90;
-let mouse_in_x = 0;
-let mouse_in_y = 0;
-let mouse_in_x_full = 0;
-let mouse_in_y_full = 0;
-let x_distance = 0;
-let y_distance = 0;
-let b_x = 180;
-let b_y = 50;
-let b_x_full = 180;
-let b_y_full = 50;
+
+// an array to add multiple particles
+let particles = [];
 
 function preload() {
   fontReg = loadFont('/../../assets/Poppins-Regular.ttf');
@@ -22,7 +15,12 @@ function setup() {
   textFont(fontReg);
   imageMode(CENTER);
   rectMode(CENTER, CENTER);
-  frameRate(40);
+  frameRate(20);
+
+  // particles
+  for(let i = 0;i<50;i++){
+    particles.push(new Particle());
+  }
 }
 
 function draw() {
@@ -31,107 +29,57 @@ function draw() {
 
   textAlign(CENTER, CENTER);
   fill('white');
-  image(img, width*0.5, height*0.4, width*0.4, width*0.4*0.39863);
+  //image(img, width*0.5, height*0.4, width*0.4, width*0.4*0.39863);
   stroke('white');
   noFill();
 
-  // setup button positions
-  let b_center_x = width*0.44;
-  let b_center_y = height*0.5+0.5*width*0.32*0.39863;
-  let b_center_x_full = width*0.56;
-  let b_center_y_full = height*0.5+0.5*width*0.32*0.39863;
 
-  // check mouse locations
-  if (mouseX > b_center_x - 0.5*b_x && mouseX < b_center_x + 0.5*b_x){
-    mouse_in_x = 1;
-  } else {
-    mouse_in_x = 0;
-  }
-  if (mouseY > b_center_y - 0.5*b_y && mouseY < b_center_y + 0.5*b_y){
-    mouse_in_y = 1;
-  } else {
-    mouse_in_y = 0;
-  }
-  if (mouseX > b_center_x_full - 0.5*b_x && mouseX < b_center_x_full + 0.5*b_x){
-    mouse_in_x_full = 1;
-  } else {
-    mouse_in_x_full = 0;
-  }
-  if (mouseY > b_center_y_full - 0.5*b_y && mouseY < b_center_y_full + 0.5*b_y){
-    mouse_in_y_full = 1;
-  } else {
-    mouse_in_y_full = 0;
-  }
-
-  // draw explore button
-  textSize(24);
-  if (mouse_in_x && mouse_in_y) {
-    fill('white');
-    stroke('white');
-    rect(b_center_x, b_center_y, b_x, b_y);
-    fill('black');
-    noStroke();
-    text('Explore', b_center_x, b_center_y-3);
-  } else {
-    fill('black');
-    stroke('white');
-    rect(b_center_x, b_center_y, b_x, b_y);
-    fill('white');
-    noStroke();
-    text('Explore', b_center_x, b_center_y-3); }
-
-  // draw about button
-  textSize(24);
-  if (mouse_in_x_full && mouse_in_y_full) {
-    fill('white');
-    stroke('white');
-    rect(b_center_x_full, b_center_y_full, b_x_full, b_y_full);
-    fill('black');
-    noStroke();
-    text('About', b_center_x_full, b_center_y_full-3);
-  } else {
-    fill('black');
-    stroke('white');
-    rect(b_center_x_full, b_center_y_full, b_x_full, b_y_full);
-    fill('white');
-    noStroke();
-    text('About', b_center_x_full, b_center_y_full-3); }
-
-  // set cursor if in either button
-  if ((mouse_in_x_full && mouse_in_y_full) || (mouse_in_x && mouse_in_y)) {
-    cursor(HAND);
-  } else {
-    cursor('https://s3.amazonaws.com/mupublicdata/cursor.cur');
-  }
-
-  // calculate square speed
-  x_distance = abs(mouseX - b_center_x)/width;
-  y_distance = abs((mouseY - b_center_y)/height);
-
-  // draw circle
-  let angle = angleDegrees * PI / 180;
-  fill(255,0,0);
-  strokeWeight(3);
-  noStroke();
-  translate(0.5*width, 0.5*height);
-  ellipse(-0.3*width*cos(angle), -0.35*height*sin(angle), 150-(100*(y_distance+x_distance)));
-  translate(-0.5*width, -0.5*height);
-  print((y_distance+x_distance));
-
-  // increment time
-  if (angleDegrees < 360) {
-      angleDegrees += 2;
-  } else {
-    angleDegrees = 0 ;
-  }
+  for(let i = 0;i<particles.length;i++) {
+    particles[i].createParticle();
+    particles[i].moveParticle();
+    particles[i].joinParticles(particles.slice(i));
 }
 
-// direct if mouse press inside of button
-function mousePressed(){
-  if (mouse_in_x && mouse_in_y) {
-    window.open("shm.html", "_self");
+}
+
+// this class describes the properties of a single particle.
+class Particle {
+// setting the co-ordinates, radius and the
+// speed of a particle in both the co-ordinates axes.
+  constructor(){
+    this.x = random(0,width);
+    this.y = random(0,height);
+    this.r = random(2,15);
+    this.xSpeed = random(-1,1);
+    this.ySpeed = random(-0.5,0.5);
   }
-  if (mouse_in_x_full && mouse_in_y_full) {
-    window.open("about.html", "_self");
+
+// creation of a particle.
+  createParticle() {
+    noStroke();
+    fill('rgba(200,169,169,0.5)');
+    circle(this.x,this.y,this.r);
+  }
+
+// setting the particle in motion.
+  moveParticle() {
+    if(this.x < 0 || this.x > width)
+      this.xSpeed*=-1;
+    if(this.y < 0 || this.y > height)
+      this.ySpeed*=-1;
+    this.x+=this.xSpeed;
+    this.y+=this.ySpeed;
+  }
+
+// this function creates the connections(lines)
+// between particles which are less than a certain distance apart
+  joinParticles(paraticles) {
+    particles.forEach(element =>{
+      let dis = dist(this.x,this.y,element.x,element.y);
+      if(dis<120) {
+        stroke('rgba(255,255,255,0.04)');
+        line(this.x,this.y,element.x,element.y);
+      }
+    });
   }
 }
