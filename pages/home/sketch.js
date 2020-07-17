@@ -18,7 +18,7 @@ function setup() {
   frameRate(20);
 
   // particles
-  for(let i = 0;i<50;i++){
+  for(let i = 0;i<70;i++){
     particles.push(new Particle());
   }
 }
@@ -50,8 +50,8 @@ class Particle {
     this.x = random(0,width);
     this.y = random(0,height);
     this.r = random(2,15);
-    this.xSpeed = random(-1,1);
-    this.ySpeed = random(-0.5,0.5);
+    this.xSpeed = random(-3,3);
+    this.ySpeed = random(-2,2);
   }
 
 // creation of a particle.
@@ -77,7 +77,7 @@ class Particle {
     particles.forEach(element =>{
       let dis = dist(this.x,this.y,element.x,element.y);
       if(dis<120) {
-        stroke('rgba(255,255,255,0.04)');
+        stroke('rgba(255,255,255,0.1)');
         line(this.x,this.y,element.x,element.y);
       }
     });

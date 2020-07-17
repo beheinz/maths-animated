@@ -28,20 +28,21 @@
   font-family: "Arial";
   position: absolute;
   top: 0;
-  right: 365px;
+  right: 465px;
   font-size: 20px;
   margin-left: 50px;
 }
 
 .openbtnR {
   position: absolute;
-  top: 0;
+  top: 5%;
+  text-align: center;
   right: 0;
-  font-size: 20px;
+  font-size: 80px;
   cursor: pointer;
   background-color: black;
   color: white;
-  padding: 5px 15px;
+  padding: 40vh 15px;
   border: none;
   font-family: "myFirstFont";
 }
