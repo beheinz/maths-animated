@@ -5,8 +5,8 @@ var len;
 var mouseReady = true;
 let mouse_in_x = 0;
 let mouse_in_y = 0;
-let b_x = 100;
-let b_y = 30;
+let b_x = 130;
+let b_y = 40;
 let auto_rotate = 1;
 let waveY = [];
 let waveX = [];
@@ -17,46 +17,47 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(1200, 1100);
+  canvas.parent('sketch-holder');
   textFont(fontReg);
   imageMode(CENTER);
   frameRate(40);
 
-  len = 100;
+  len = 180;
   textAlign(CENTER, CENTER);
   textSize(20);
   rectMode(CENTER);
 
-  slide_x = new Slider(width * 0.2, height * 0.5 - 50, 50, "X ", 0.35*height);
-  slide_y = new Slider(width * 0.2, height * 0.5 + 0, 50, "Y ", 0.35*height);
-  slide_t = new Slider(width * 0.2, height * 0.5 + 50, 30, "θ ", 360);
+  slide_x = new Slider(width * 0.5, 850, 200, "x ", 0.35*height);
+  slide_y = new Slider(width * 0.5, 900, 200, "y ", 0.35*height);
+  slide_t = new Slider(width * 0.5, 950, 30, "theta   ", 360);
 }
 
 function draw() {
   // black background
-  background(0);
+  background(255,255,255);
 
-  fill('white');
+  fill('black');
   noStroke();
   textSize(40);
-  text('2D Matrix Rotations', 0.5*width, height*0.06);
 
-  image(img, width*0.2, height*0.3, width*0.22, width*0.22*0.1921708);
 
-  stroke('white');
+
+
+  stroke('black');
   strokeWeight(2);
   noFill();
 
 
 
   // draw axis
-  stroke(255);
+  stroke(0);
   noFill();
   strokeWeight(3);
 
   let centerX = width/2;
-  let centerY = height/2;
-  let size = 0.35*height;
+  let centerY = -200+height/2;
+  let size = 400;
 
   line(centerX-size, centerY, centerX+size, centerY);
   line(centerX, centerY-size, centerX, centerY+size);
@@ -78,7 +79,7 @@ function draw() {
     angle = angleDegrees * PI / 180;
   }
 
-  stroke(0, 0, 255);
+  stroke(0, 0, 0);
   strokeWeight(3);
   square(squareX, squareY, 0.02*width);
 
@@ -103,7 +104,7 @@ function draw() {
 
   translate(squareRotatedX, squareRotatedY);
   rotate(angle);
-  fill('black');
+  fill('white');
   square(0, 0, 0.02*width);
   rotate(-angle);
   translate(-squareRotatedX, -squareRotatedY);
@@ -119,8 +120,8 @@ function draw() {
   }
 
   // button
-  let b_center_x = width*0.2;
-  let b_center_y = height*0.5+0.5*width*0.34*0.39863;
+  let b_center_x = width*0.5;
+  let b_center_y = 1050;
 
   if (mouseX > b_center_x - 0.5*b_x && mouseX < b_center_x + 0.5*b_x){
     mouse_in_x = 1;
@@ -134,19 +135,19 @@ function draw() {
     mouse_in_y = 0;
   }
 
-  textSize(20);
+  textSize(25);
   if ((mouse_in_x && mouse_in_y) || auto_rotate==1) {
-    fill('white');
-    stroke('white');
-    rect(b_center_x, b_center_y, b_x, b_y);
     fill('black');
+    stroke('black');
+    rect(b_center_x, b_center_y, b_x, b_y);
+    fill('white');
     noStroke();
     text('Rotate', b_center_x, b_center_y-3);
   } else {
-    fill('black');
-    stroke('white');
-    rect(b_center_x, b_center_y, b_x, b_y);
     fill('white');
+    stroke('black');
+    rect(b_center_x, b_center_y, b_x, b_y);
+    fill('black');
     noStroke();
     text('Rotate', b_center_x, b_center_y-3); }
 
@@ -157,8 +158,8 @@ function draw() {
     cursor('https://s3.amazonaws.com/mupublicdata/cursor.cur');
   }
 
-  stroke('white');
-  fill('white');
+  stroke('black');
+  fill('black');
   strokeWeight(2);
   textSize(20);
   slide_x.show();
@@ -222,17 +223,17 @@ var Slider = function(x, y, val, sym, max) {
         this.val = round(map(this.cx, this.x - this.len, this.x + this.len, 0, this.max));
 
 
-        stroke('white');
+        stroke('black');
         line(this.x - this.len, this.y, this.x + this.len, this.y);
-        fill('white');
+        fill('black');
         noStroke();
         text(this.sym, this.x - this.len - 36, this.y-4);
 
 
 
-        text(this.val, this.x + this.len + 10, this.y-4);
-        fill(0,0,255);
-        stroke('white');
+        text(this.val, this.x + this.len + 30, this.y-4);
+        fill(255,255,255);
+        stroke(0,0,0);
         ellipse(this.cx, this.y, this.sz);
     };
 };

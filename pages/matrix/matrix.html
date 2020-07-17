@@ -5,22 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/../../generic/styles.css">
     <link rel="stylesheet" href="/../../generic/sidebar_left.css">
+    <link rel="stylesheet" href="/../../assets/page_styles.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style> body{padding:0; margin:0;} </style>
+    <script src="sketch.js"></script>
 </head>
 
-<body style="background-color:black;">
-
+<body style=background-image:url('/../../assets/back.png');>
   <div w3-include-html="/../../generic/sidebar.html"></div>
-
   <script src="/../../generic/functions.js"></script>
 
-  <script src="sketch.js"></script>
-  <div id="canvasContainer">
-    <canvas data-processing-sources="rectangles.pde">
-    </canvas></div>
+  <title>2D Matrix Rotations</title>
+
+
+
+<div class="content">
+<section> Proof </section>
+<p>A position in a two-dimensional space can be given in cartesian coordinates
+  (x,y) or in polar coordinates (r, φ). Cartesian coordinates specify each point
+  by a set of coordinates whereas with polar coordinates, each point is
+  determined by a distance from a reference point (the origin) and an
+  angle. Suppose that a position is rotated by the angle θ:</p>
+
+
+
+
+<img src="/../../assets/dia2.png" alt="Italian Trulli" class="image">
+
+<p>The new vector’s polar coordinates are (r, φ + θ). The new cartesian
+  coordinates can be calculated using the trigonometric identities for the sum of two angles:</p>
+
+
+<equation>
+    \[
+  \begin{align*}
+
+  x_1 &= r\cos(\phi+\theta) \\
+      &= r(\cos\phi \cos\theta - \sin\phi \sin\theta) \\
+      &= (r\cos\phi)\cos(\theta) - (r\sin\phi)\sin\theta \\
+      &= x\cos\theta - y\sin(\theta) \\
+
+  \end{align*}
+  \]
+</equation>
+
+<equation>
+  \[
+  \begin{align*}
+
+  y_1 &= r\sin(\phi+\theta) \\
+      &= r(\sin\phi \cos\theta + \cos\phi \sin\theta) \\
+      &= (r\sin\phi)\cos(\theta) + (r\cos\phi)\sin\theta \\
+      &= y\cos\theta + x\sin(\theta) \\
+      &= x\sin\theta + y\cos(\theta)
+
+  \end{align*}
+
+  \]
+</equation>
+
+<p>The transformation of the position (x,y) to the position (x1,y1) caused by a
+  rotation through the angle θ can be expressed in matrix notation as:</p>
+
+
+<equation>
+  \[\begin{bmatrix} x\\y \end{bmatrix} =
+  \begin{bmatrix} x_1\\ y_1 \end{bmatrix} \begin{bmatrix} cos(\theta)&-sin(\theta) \\
+  sin(\theta)&cos(\theta) \end{bmatrix}\]
+</equation>
+
+<section> Matrix Rotations </section>
+
+<p>Vary the position of the black square to see it rotate. Toggle the rotated
+button to turn automatic rotation on and off.</p>
+
+<div id="sketch-holder">
+
+</div>
+
+
+
 
   <script>includeHTML();</script>
+
+  <p>A good understanding of 2D rotations can be used to get your head around 3D rotations.</p>
+
+
+  </div>
 
 </body>
 </html>

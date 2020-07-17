@@ -61,6 +61,10 @@ title {
   background-color: transparent;
 }
 
+a {
+  font-family: head;
+}
+
 p {
   text-align:center;
   font-size: 2em;
