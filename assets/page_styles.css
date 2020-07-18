@@ -31,8 +31,8 @@ p {
   text-align:left;
   font-size: 22px;
   background-color: transparent;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 0px;
+  padding-left: 0px;
   color: #000000;
   font-family: text;
 }
@@ -42,8 +42,8 @@ section {
   font-size: 32px;
   background-color: transparent;
   padding-top: 30px;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 0px;
+  padding-left: 0px;
   color: #000000;
   font-weight: bold;
   font-family: head;

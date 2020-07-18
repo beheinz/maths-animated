@@ -10,13 +10,12 @@ let initialHeight;
 let t_multiply = 1;
 
 function preload() {
-  img = loadImage('/../../assets/f1.png');
-  img2 = loadImage('/../../assets/f2.png');
   fontReg = loadFont('/../../assets/Poppins-Regular.ttf');
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(1050, 1100);
+  canvas.parent('sketch-holder');
   background('black');
 
   textFont(fontReg);
@@ -28,10 +27,10 @@ function setup() {
   textSize(20);
   rectMode(CENTER);
 
-  slide_g = new Slider(width * 0.2, height * 0.20 + 250, 10, "G ", 400);
-  slide_l = new Slider(width * 0.2, height * 0.20 + 300, 250, "L ", 700);
-  slide_t = new Slider(width * 0.2, height * 0.20 + 350, 30, "θ ", 80);
-  slide_tm = new Slider(width * 0.2, height * 0.20 + 400, 5, "t ", 10);
+  slide_g = new Slider(width * 0.5,  850, 10, "g ", 400);
+  slide_l = new Slider(width * 0.5,  900, 250, "L ", 700);
+  slide_t = new Slider(width * 0.5,  950, 30, "theta max        ", 80);
+  slide_tm = new Slider(width * 0.5,  1000, 5, "time ", 10);
 }
 
 function draw() {
@@ -47,7 +46,7 @@ function draw() {
     fill('white');
     noStroke();
     textSize(40);
-    text('Simple Harmonic Motion', 0.5*width, height*0.06);
+
 
     noFill();
     stroke('white');
@@ -65,7 +64,7 @@ function draw() {
 
 
     // translate to fixed point
-    translate(0.5*windowWidth, 0.13*windowHeight);
+    translate(0.5*width, 100);
 
     // calculate theta
     theta = thetaMax*cos(2*PI*time/timePeriod);
@@ -107,8 +106,8 @@ function draw() {
     stroke('white');
     line(0,0,x,y);
     noStroke();
-    fill(0,0,255);
-    ellipse(x,y,30);
+    fill(255,255,255);
+    ellipse(x,y,15);
 
     fill(255,0,0);
     //ellipse(wave[0],length+10,10);
@@ -118,13 +117,12 @@ function draw() {
     time += t_multiply * 0.025;
 
     // reset to origin
-    translate(-0.5*windowWidth, -0.13*windowHeight);
+    translate(-0.5*width, -100);
 
     stroke('white');
     fill('white');
 
-    image(img, initialWidth*0.2-134, 0.20*initialHeight);
-    image(img2, initialWidth*0.2-70, 0.20*initialHeight+100);
+
 
     textSize(20);
     slide_g.show();
@@ -180,7 +178,7 @@ function windowResized() {
 
 
 
-        text(this.val, this.x + this.len + 10, this.y-4);
+        text(this.val, this.x + this.len + 30, this.y-4);
         fill('black');
         stroke('white');
         ellipse(this.cx, this.y, this.sz);

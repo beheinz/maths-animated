@@ -13,7 +13,7 @@ src: url("/../../assets/OpenSans-Regular.ttf");
   margin: auto;
   margin-bottom: 135px;
   background: none;
-  padding: 6px;
+  padding: 30px;
   background-color: #ffffff;
   border: 2px solid black;
   border-radius: 15px;
@@ -86,6 +86,8 @@ equation {
   text-align:center;
   font-size: 20px;
   color: #000000;
+
+
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
