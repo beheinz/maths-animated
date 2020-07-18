@@ -23,7 +23,6 @@ src: url("/../../assets/OpenSans-Regular.ttf");
 
 .content_home {
   max-width: 45vw;
-
   margin: auto;
   background: none;
   padding: 6px;
@@ -83,11 +82,8 @@ info {
 
 
 equation {
-  text-align:center;
   font-size: 20px;
   color: #000000;
-
-
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
