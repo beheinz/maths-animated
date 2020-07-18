@@ -179,7 +179,7 @@ function windowResized() {
 
 
         text(this.val, this.x + this.len + 30, this.y-4);
-        fill('black');
+        fill('white');
         stroke('white');
         ellipse(this.cx, this.y, this.sz);
     };

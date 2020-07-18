@@ -81,7 +81,7 @@ function draw() {
     textSize(20);
     noStroke();
     fill('white');
-    text("Area = "  + round(4*totalArea,1), 0.5*width, 0.95*height);
+    text("Area = "  + round(4*totalArea,0) + " = " + round(100*16*totalArea/(PI*circleSize*circleSize),1) + "% of the actual area", 0.5*width, 0.95*height);
 
     slideCircleSize.show();
     slideNoCircles.show();
@@ -136,7 +136,7 @@ var Slider = function(x, y, val, sym, max, min) {
 
 
         text(this.val, this.x + this.len + 10, this.y-4);
-        fill(255,0,0);
+        fill(255,255,255);
         stroke('white');
         ellipse(this.cx, this.y, this.sz);
     };

@@ -22,7 +22,32 @@
   <div class="content">
   <section_start> Introduction </section_start>
 
+  <p>Let's say that we're trying to find the area of a circle. We can divide
+    the circle into rings. The length
+    of each of these rectangular rings is \(2\pi r\) and the thickness depends on how
+    finely we chop up the circle. Let's call this thickness \(dr\), the difference
+    in radius from one ring to the next.</p>
+
+    <p>We can place the rectangles together and form a triangle. We can then calculate
+      the area of the triangles, as we know that the base length is the same as the
+      radius of the original circle and the height is the length of the longest
+      ring, \(2\pi r\). </p>
+
+    <equation>\[A=\frac{1}{2}bh=\frac{1}{2}r2\pi r=\pi r^2\]
+
+    <p>We arrive at the formula for the area of a circle.</p>
+
+    <section>Varying dx</section>
+
+
+    <p>Now, vary the width of
+    each slice and the radius of the circle and watch the area calculation become
+    accurate.</p>
+
   <div id="sketch-holder"></div>
+
+  <p> Have a think about the limitations of this model. Are circular rings really
+      rectangles? How small does \(dx\) need to be for the answer to be perfect?
 
   <script>includeHTML();</script>
 

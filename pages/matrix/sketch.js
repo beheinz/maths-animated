@@ -230,7 +230,7 @@ var Slider = function(x, y, val, sym, max) {
 
 
         text(this.val, this.x + this.len + 30, this.y-4);
-        fill(0,0,0);
+        fill(255,255,255);
         stroke(255,255,255);
         ellipse(this.cx, this.y, this.sz);
     };
