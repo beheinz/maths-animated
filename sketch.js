@@ -7,7 +7,6 @@ let particles = [];
 
 function preload() {
   fontReg = loadFont('/../../assets/Poppins-Regular.ttf');
-  img = loadImage('/../../assets/start.png');
 }
 
 function setup() {
@@ -50,8 +49,8 @@ class Particle {
     this.x = random(0,width);
     this.y = random(0,height);
     this.r = random(2,15);
-    this.xSpeed = random(-3,3);
-    this.ySpeed = random(-2,2);
+    this.xSpeed = random(-this.r/5, this.r/5);
+    this.ySpeed = random(-this.r/5, this.r/5);
   }
 
 // creation of a particle.
@@ -77,7 +76,7 @@ class Particle {
     particles.forEach(element =>{
       let dis = dist(this.x,this.y,element.x,element.y);
       if(dis<120) {
-        stroke('rgba(255,255,255,0.1)');
+        stroke('rgba(255,255,255,0.08)');
         line(this.x,this.y,element.x,element.y);
       }
     });

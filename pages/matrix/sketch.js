@@ -13,7 +13,6 @@ let waveX = [];
 
 function preload() {
   fontReg = loadFont('/../../assets/Poppins-Regular.ttf');
-  img = loadImage('/../../assets/matrix.png');
 }
 
 function setup() {
@@ -28,35 +27,34 @@ function setup() {
   textSize(20);
   rectMode(CENTER);
 
-  slide_x = new Slider(width * 0.5, 850, 200, "x ", 0.35*height);
-  slide_y = new Slider(width * 0.5, 900, 200, "y ", 0.35*height);
-  slide_t = new Slider(width * 0.5, 950, 30, "theta   ", 360);
+  slide_x = new Slider(width * 0.5, 900, 200, "x ", 0.35*height);
+  slide_y = new Slider(width * 0.5, 950, 200, "y ", 0.35*height);
+  slide_t = new Slider(width * 0.5, 1000, 30, "theta   ", 360);
 }
 
 function draw() {
   // black background
-  background(255,255,255);
+  background(0,0,0);
 
-  fill('black');
   noStroke();
   textSize(40);
 
 
 
 
-  stroke('black');
+  stroke('white');
   strokeWeight(2);
   noFill();
 
 
 
   // draw axis
-  stroke(0);
+  stroke(255);
   noFill();
   strokeWeight(3);
 
   let centerX = width/2;
-  let centerY = -200+height/2;
+  let centerY = -100+height/2;
   let size = 400;
 
   line(centerX-size, centerY, centerX+size, centerY);
@@ -79,7 +77,7 @@ function draw() {
     angle = angleDegrees * PI / 180;
   }
 
-  stroke(0, 0, 0);
+  stroke(255, 255, 255);
   strokeWeight(3);
   square(squareX, squareY, 0.02*width);
 
@@ -104,7 +102,7 @@ function draw() {
 
   translate(squareRotatedX, squareRotatedY);
   rotate(angle);
-  fill('white');
+  fill('black');
   square(0, 0, 0.02*width);
   rotate(-angle);
   translate(-squareRotatedX, -squareRotatedY);
@@ -137,17 +135,17 @@ function draw() {
 
   textSize(25);
   if ((mouse_in_x && mouse_in_y) || auto_rotate==1) {
-    fill('black');
-    stroke('black');
-    rect(b_center_x, b_center_y, b_x, b_y);
     fill('white');
+    stroke('white');
+    rect(b_center_x, b_center_y, b_x, b_y);
+    fill('black');
     noStroke();
     text('Rotate', b_center_x, b_center_y-3);
   } else {
-    fill('white');
-    stroke('black');
-    rect(b_center_x, b_center_y, b_x, b_y);
     fill('black');
+    stroke('white');
+    rect(b_center_x, b_center_y, b_x, b_y);
+    fill('white');
     noStroke();
     text('Rotate', b_center_x, b_center_y-3); }
 
@@ -158,8 +156,8 @@ function draw() {
     cursor('https://s3.amazonaws.com/mupublicdata/cursor.cur');
   }
 
-  stroke('black');
-  fill('black');
+  stroke('white');
+  fill('white');
   strokeWeight(2);
   textSize(20);
   slide_x.show();
@@ -223,17 +221,17 @@ var Slider = function(x, y, val, sym, max) {
         this.val = round(map(this.cx, this.x - this.len, this.x + this.len, 0, this.max));
 
 
-        stroke('black');
+        stroke('white');
         line(this.x - this.len, this.y, this.x + this.len, this.y);
-        fill('black');
+        fill('white');
         noStroke();
         text(this.sym, this.x - this.len - 36, this.y-4);
 
 
 
         text(this.val, this.x + this.len + 30, this.y-4);
-        fill(255,255,255);
-        stroke(0,0,0);
+        fill(0,0,0);
+        stroke(255,255,255);
         ellipse(this.cx, this.y, this.sz);
     };
 };
