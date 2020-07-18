@@ -9,7 +9,7 @@ src: url("/../../assets/OpenSans-Regular.ttf");
 }
 
 .content {
-  max-width: 1200px;
+  max-width: 1050px;
   margin: auto;
   margin-bottom: 135px;
   background: none;
@@ -22,7 +22,7 @@ src: url("/../../assets/OpenSans-Regular.ttf");
 }
 
 .content_home {
-  max-width: 900px;
+  max-width: 45vw;
 
   margin: auto;
   background: none;
@@ -39,7 +39,7 @@ h1 {
   font-family: head;
   display: block;
   font-size: 4em;
-  margin-top: 3.2em;
+  margin-top: 24vh;
   margin-bottom: 0.2em;
   margin-left: 0;
   margin-right: 0;
@@ -67,7 +67,7 @@ a {
 
 p {
   text-align:center;
-  font-size: 2em;
+  font-size: 23px;
   font-family: head;
 }
 

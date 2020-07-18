@@ -17,7 +17,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(1200, 1100);
+  canvas = createCanvas(1050, 1100);
   canvas.parent('sketch-holder');
   textFont(fontReg);
   imageMode(CENTER);
