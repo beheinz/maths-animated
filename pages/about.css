@@ -3,23 +3,6 @@ font-family: "text";
 src: url("/../../assets/OpenSans-Regular.ttf");
 }
 
-canvas {
-    position: static;
-    margin-top:20px;
-    top: 0%;
-    left: 0%;
-    transform: translate(0%, 0%);
-    z-index: 0 !important;
-    border-radius: 12px;
-}
-
-canvasfg {
-    position: relative;
-    margin-top: 600px;
-    margin-bottom: 0px;
-    z-index: 0 !important
-}
-
 .image {
   max-width: 40%;
   display: block;
