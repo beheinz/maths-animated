@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="./math.js"></script>
+    <link rel="stylesheet" href="/../../generic/styles.css">
+    <link rel="stylesheet" href="/../../generic/sidebar_left.css">
+    <link rel="stylesheet" href="/../../assets/page_styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style> body{padding:0; margin:0;} </style>
+    <script src="sketch.js"></script>
+  </head>
+
+<body style=background-image:url('/../../assets/back.png');>
+  <div w3-include-html="/../../generic/sidebar.html"></div>
+  <script src="/../../generic/functions.js"></script>
+
+  <title>Newton-Raphson Method</title>
+
+  <div class="content">
+  <section_start> Introduction </section_start>
+
+  <p> The Newton-Raphson Method is a root-finding algorithm which produces
+    successively better approximations to the roots (or zeroes) of a real-valued function. </p>
+
+  <equation> \[x_{n+1} = x_n - \frac{f(x_n)}{f(x_{n+1})} \tag{1}\]</equation>
+
+
+  <section> Simulation </section>
+
+
+
+  <div id="sketch-holder"> </div>
+
+
+  <script>includeHTML();</script>
+</body>
+</html>
