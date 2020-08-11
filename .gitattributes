@@ -2,4 +2,4 @@
 /addons/p5.sound.min.js -linguist-documentation
 addons/p5.sound.min.js -linguist-documentation
 
-pages/*.js linguist-documentation
+./pages/*.js linguist-documentation
