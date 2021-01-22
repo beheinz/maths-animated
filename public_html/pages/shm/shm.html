@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="/../../generic/styles.css">
+    <link rel="stylesheet" href="/../../generic/sidebar_left.css">
+    <link rel="stylesheet" href="/../../assets/page_styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style> body{padding:0; margin:0;} </style>
+    <script src="sketch.js"></script>
+  </head>
+
+<body style=background-image:url('/../../assets/back.png');>
+  <div w3-include-html="/../../generic/sidebar.html"></div>
+  <script src="/../../generic/functions.js"></script>
+
+  <title>Simple Harmonic Motion</title>
+
+  <div class="content">
+  <section_start> Introduction </section_start>
+
+  <p> Simple harmonic motion is a special type of periodic motion where the
+    restoring force on the moving object is directly proportional to,
+    and opposite of, the object's displacement vector. The angle for simple
+    harmonic motion with respect to t, can be expressed
+  as: </p>
+
+  <equation> \[\theta (t) = \theta_{max} \cos\frac{2\pi}{T}t \tag{1}\]</equation>
+
+  <p> The time period can be calculated by Equation 2. Note that the time
+  period is indepdant of mass but not the gravitational field strength. Therefore,
+  the same pendulum would swing more slowly on the moon than the earth.</p>
+
+  <equation>\[T=2\pi \sqrt\frac{L}{g}\tag{2}\]</equation>
+
+  <section> Simulation </section>
+
+  <p> Change the variables in the equation using the sliders and
+  watch how the produced graph changes. Technically, a pendulum is only a simple harmonic oscillator for small
+  angles. How far can you increase the maxiumum angle until the mass no longer
+  produces a cosine graph?</p>
+
+  <div id="sketch-holder"> </div>
+
+
+  <script>includeHTML();</script>
+</body>
+</html>

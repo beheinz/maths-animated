@@ -1,0 +1,47 @@
+@font-face{
+font-family: "text";
+src: url("/../../assets/OpenSans-Regular.ttf");
+}
+
+.image {
+  max-width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+p {
+  text-align:left;
+  font-size: 22px;
+  background-color: transparent;
+  padding-right: 0px;
+  padding-left: 0px;
+  color: #000000;
+  font-family: text;
+  margin-top: 2px;
+}
+
+section {
+  text-align:left;
+  font-size: 32px;
+  background-color: transparent;
+  padding-top: 30px;
+  padding-right: 0px;
+  padding-left: 0px;
+  color: #000000;
+  font-weight: bold;
+  font-family: head;
+}
+
+section_start {
+  text-align:left;
+  font-size: 32px;
+  background-color: transparent;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  color: #000000;
+  font-weight: bold;
+  font-family: head;
+}

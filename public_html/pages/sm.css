@@ -1,0 +1,46 @@
+.wrap{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.wrap div{
+  display: inline-block;
+}
+
+.icon{
+  background-color: transparent;
+  background-repeat:no-repeat;
+  background-position:center center;
+  height: 5em;
+  width: 5em;
+  -webkit-transition: background-color 0.4s ease;
+  -moz-transition: background-color 0.4s ease;
+  -ms-transition: background-color 0.4s ease;
+  -o-transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease;
+}
+
+.icon a{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.linkedin{
+  background-image:url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAtMC4zIDEwNSAxMDUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xLjcsMzQuNmgyMS43djY5LjdIMS43VjM0LjZ6IE0xMi42LDBjNi45LDAsMTIuNiw1LjYsMTIuNiwxMi42YzAsNi45LTUuNiwxMi42LTEyLjYsMTIuNkM1LjYsMjUuMSwwLDE5LjUsMCwxMi42QzAsNS42LDUuNiwwLDEyLjYsMCIvPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0zNywzNC42aDIwLjh2OS41aDAuM2MyLjktNS41LDEwLTExLjMsMjAuNS0xMS4zYzIxLjksMCwyNiwxNC40LDI2LDMzLjJ2MzguMkg4Mi45VjcwLjRjMC04LjEtMC4yLTE4LjUtMTEuMy0xOC41Yy0xMS4zLDAtMTMsOC44LTEzLDE3Ljl2MzQuNUgzN1YzNC42eiIvPjwvc3ZnPg==);
+  background-size:50%;
+}
+
+.linkedin:hover{
+  background-color:#007BB6;
+}
+
+.github{
+  background-image:url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAtMC40IDMyIDMzIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMzIsMTZjMCw4LjgtNy4yLDE2LTE2LDE2QzcuMiwzMiwwLDI0LjgsMCwxNkMwLDcuMiw3LjIsMCwxNiwwQzI0LjgsMCwzMiw3LjIsMzIsMTYgTTIwLDI5YzUuNS0xLjgsOS41LTYuOSw5LjUtMTNjMC03LjUtNi0xMy41LTEzLjUtMTMuNUM4LjUsMi41LDIuNSw4LjUsMi41LDE2YzAsNi4xLDQsMTEuMiw5LjUsMTN2LTIuNWMtMy45LDAuOS00LjgtMS44LTQuOC0xLjhjLTAuNi0xLjYtMS41LTItMS41LTJjLTEuMy0wLjksMC4xLTAuOCwwLjEtMC44YzEuNCwwLjEsMi4xLDEuNCwyLjEsMS40YzEuMywyLjMsMy41LDEuNCw0LjIsMS4xYzAuMi0xLDEtMS4yLDEuMi0xLjNDOS44LDIyLjYsNiwyMS4zLDYsMTUuMmMwLTEuNywwLjYtMy4xLDEuNi00LjJjLTAuMi0wLjQtMC43LTIsMC4yLTQuMmMwLDAsMS4zLTAuNCw0LjMsMS42YzEuMy0wLjMsMi42LTAuNSwzLjktMC41YzEuMywwLDIuNywwLjIsMy45LDAuNWMzLTIsNC4zLTEuNiw0LjMtMS42YzAuOSwyLjIsMC4zLDMuOCwwLjIsNC4yYzEsMS4xLDEuNiwyLjUsMS42LDQuMmMwLDYuMS0zLjgsNy40LTcuMyw3LjhjMC42LDAuNCwxLjMsMS4zLDEuMywyLjhWMjl6Ii8+PC9zdmc+);
+  background-size:60%;
+}
+
+.github:hover{
+  background-color:#6CC644;
+}

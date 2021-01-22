@@ -1,0 +1,102 @@
+
+@font-face {
+    font-family: "head";
+    src: url("/../../assets/Poppins-Regular.ttf");
+}
+@font-face{
+font-family: "text";
+src: url("/../../assets/OpenSans-Regular.ttf");
+}
+
+.content {
+  max-width: 1050px;
+  margin: auto;
+  margin-bottom: 135px;
+  background: none;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 15px;
+  border-bottom-style: none;
+  border-top-style: none;
+}
+
+.content_home {
+  max-width: 45vw;
+  margin: auto;
+  background: none;
+  padding: 6px;
+  background-color: transparent;
+}
+
+body {
+
+  color:white;
+}
+
+h1 {
+  font-family: head;
+  display: block;
+  font-size: 4em;
+  margin-top: 24vh;
+  margin-bottom: 0.2em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align:center;
+}
+
+title {
+  font-family: head;
+  display: block;
+  font-size: 4em;
+  margin-top: 0px;
+  padding: 20px;
+  margin-bottom: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-align:center;
+  background-color: transparent;
+}
+
+a {
+  font-family: head;
+}
+
+p {
+  text-align:center;
+  font-size: 23px;
+  font-family: head;
+}
+
+info {
+  text-align: left;
+  position: fixed;
+  font-size: 14px;
+  color: black;
+  left: 300px;
+  top: 250px;
+  max-width: 100px;
+}
+
+
+equation {
+  font-size: 20px;
+  color: #000000;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -3 !important
+
+}
